@@ -9,6 +9,7 @@ from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime
+import shutil
 
 
 # Flagga för att ta bort all tidigare sparad logdata
@@ -19,7 +20,7 @@ os.makedirs("logs/", exist_ok=True)
     
 # Rensa loggdata
 if clean_logs:
-    !rm -rf logs/
+    shutil.rmtree("logs/")
 
 
 # Funktion för att generara en "Confusion matrix" som kan skrivas som en tensorflow bild.

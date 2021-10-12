@@ -1,8 +1,15 @@
 # Här är mina resultat hittils:
 
-I den här filen ska ni beskriva:
-- Era experiment
-- Era slutsatser
+Fråga 7:
+
+a) Enligt våra experiment så ser vi ingen tidskillnad vid höjd inlärningshastighet, se figur a.1
+![a.1](fig/7.1.png "Höjd inlärninghastighet till 0.10")
+
+Vid testning av att öka inlärningshastighet ännu mer så ser vi att accuracy på train och validation börjar gå ifrån varandra.
+Specifickt att validation accuracy är mindre än train accuracy, se figur a.2
+![a.1](fig/7.2.png "Höjd inlärninghastighet till 0.50")
+
+
 
 ## Glöm inte!
 

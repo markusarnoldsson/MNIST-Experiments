@@ -18,3 +18,18 @@ Enligt våra experiment så ser vi att vid minskande av batch_size (från 256 ti
 Enligt våra experiment så ser vi att convolutional_model tar betydligt längre tid att träna jämfört med non_convolutional_model.
 Detta pågrund av att: convolutional modellen bygger upp flera 2D egenskapskartor.
 ![c.1](fig/c.1.png "Convolutional vs Non-convolutional")
+
+## d)
+Non-convolutional model: 
+- Moved data = 12.33%
+- Rotated data = 74.65% 
+- Test data = 93.01% 
+- Train data = 92.8%
+
+Convolutional model:
+- Moved data = 18.47%
+- Rotated data = 86.3% 
+- Test data = 97.56% 
+- Train data = 97.34%
+
+Båda modellerna har mindre accuracy på Moved data, detta beror då på att i moved data har siffrorna flyttats åt ett slumpvis håll och inte längre är centrerade, medan i rotated är alla siffror centrerade dock roterade, vilket förklarar mindre accuracy än Train men mycket högre än Moved. Test och Train är liknande dataset därför mycket liknande accuracy.

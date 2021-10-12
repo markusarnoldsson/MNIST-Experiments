@@ -3,7 +3,7 @@
 # Fråga 7:
 
 ## a)
-Enligt våra experiment så ser vi ingen tidskillnad vid höjd inlärningshastighet (från 0.01 höjt till 0.1). Under Relative, se figur a.1
+Enligt våra experiment så ser vi ingen tidskillnad vid höjd inlärningshastighet (från 0.01 höjt till 0.1). Under Relative.
 ![a.1](fig/7.1.png "Höjd inlärninghastighet till 0.10")
 
 Vid testning av att öka inlärningshastighet ännu mer (från 0.01 höjt till 0.5) så ser vi att accuracy på train och validation börjar gå ifrån varandra.
@@ -13,3 +13,8 @@ Specifickt att validation accuracy är mindre än train accuracy, se figur a.2
 ## b)
 Enligt våra experiment så ser vi att vid minskande av batch_size (från 256 till 128 och 64) leder till högre prestanda och längre träningstider.
 ![b.1](fig/b.1.png "Minskad batch_size från 256 till 128 och 64")
+
+## c)
+Enligt våra experiment så ser vi att convolutional_model tar betydligt längre tid att träna jämfört med non_convolutional_model.
+Detta pågrund av att: convolutional modellen bygger upp flera 2D egenskapskartor.
+![c.1](fig/c.1.png "Convolutional vs Non-convolutional")

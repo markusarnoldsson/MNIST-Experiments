@@ -96,7 +96,7 @@ def non_convolutional_model():
     model = K.Sequential()
     model.add(K.layers.Flatten())
     model.add(K.layers.Input(28*28))
-    model.add(K.layers.Dense(32, activation="relu"))
+    model.add(K.layers.Dense(512, activation="relu"))
     model.add(K.layers.Dense(10, activation="softmax"))
     
     model.compile(loss="categorical_crossentropy",

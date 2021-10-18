@@ -36,3 +36,27 @@ Båda modellerna har mindre accuracy på Moved data, detta beror då på att i m
 
 ## e)
 I våra test så ser vi att när vi ökar antalet neuroner så får vi bättre resultat, men också längre träningstider. Vi upplever också att vi nuddar ett tak vid runt 500 neuroner där vid får en accuracy på runt 0.945 och ett undre tak vid 50 där vi får en accuracy på runt 0.935.
+
+## f)
+### KERNEL_SIZE
+I test för Kernel size fick vi följande värden:
+- kernel size 2,2 stride 10,10 = 0.23
+- kernel size 5,5 stride 10,10 = 0.53
+- kernel size 8,8 stride 10,10 = 0.8
+- kernel size 10,10 stride 10,10 = 0.87
+- kernel size 11,11 stride 10,10 = 0.88
+- kernel size 12,12 stride 10,10 = 0.90
+- kernel size 16,16 stride 10,10 = 0.92
+
+Utefter det här anser vi att bästa värdet och "taket" ligger vid runt 12,12 i kernel size. Då det inte ökar markant efter detta.
+
+### STRIDE
+I test för Stride fick vi följande värden:
+Strides:
+- 10,10 = 0.7929
+- 5,5 = 0.9191
+- 4,4 = 0.9447
+- 3,3 = 0.9475
+- 1,1 = 9716
+
+Utefter det här anser vi att bästa värdet är (4,4) då högre stride mindre träningstider.

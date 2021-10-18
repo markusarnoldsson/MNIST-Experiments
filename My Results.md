@@ -60,3 +60,63 @@ Strides:
 - 1,1 = 9716
 
 Utefter det här anser vi att bästa värdet är (4,4) då högre stride mindre träningstider.
+
+## g)
+Här har vi testat flera lager på non-convolutional-model:
+- 2 (32,64) lager = 24s och 0.946
+- 3 (32,64,128) lager = 28s och 0.964
+- 4 (32,54,128,256) lager = 46s och 97.52
+- 5 (32,54,128,256,512) lager = 1m 16s och 98.4
+
+Utefter det här så anser vi att tid ökar ju mer lager man lägger till, men också att precisionen ökar.
+
+# Fråga 8:
+
+### Test 1
+- Inlärningshastighet 0.01
+- Batch_size 64
+- Kernel size (12,12)
+- Stride (4,4)
+- 3 lager (32,64,128)
+
+Resultat: Tid: 1m 53s Precision: 0.9834
+
+Vi anser att tiden blir för hög, men bra precision så vi ökade batch_size
+### Test 2
+- Inlärningshastighet 0.01
+- Batch_size 128
+- Kernel size (12,12)
+- Stride (4,4)
+- 3 lager (32,64,128)
+
+Resultat: Tid: 1m 27s Precision: 0.9754
+
+Vi anser fortfarande att tiden blev hög, och egentligen bara precisionen som försämrades. Höjer då tillbaka batch size och går till 1 lager.
+### Test 3
+- Inlärningshastighet 0.01
+- Batch_size 128
+- Kernel size (12,12)
+- Stride (4,4)
+- 1 lager (32)
+
+Resultat: Tid: 1m 24s Precision: 0.9655
+
+Ungefär samma resultat, bara mindre precision igen. Tillbaka till tre lager och ökar stride till (5,5).
+### Test 5
+- Inlärningshastighet 0.01
+- Batch_size 128
+- Kernel size (12,12)
+- Stride (5,5)
+- 3 lager (32,64,128)
+
+Resultat: Tid: 1m 19s Precision: 0.9749
+
+## Slutsats
+Vår slutsats är följande konfiguration på convolutional_model
+- Inlärningshastighet 0.01
+- Batch_size 128
+- Kernel size (12,12)
+- Stride (5,5)
+- 3 lager (32,64,128)
+
+Med ett Resultat: Tid: 1m 19s Precision: 0.9749

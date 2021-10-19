@@ -6,9 +6,9 @@
 Enligt våra experiment så ser vi ingen tidskillnad vid höjd inlärningshastighet (från 0.01 höjt till 0.1). Under Relative.
 ![a.1](fig/7.1.png "Höjd inlärninghastighet till 0.10")
 
-Vid testning av att öka inlärningshastighet ännu mer (från 0.01 höjt till 0.5) så ser vi att accuracy på train och validation börjar gå ifrån varandra.
-Specifickt att validation accuracy är mindre än train accuracy, se figur a.2
-![a.2](fig/7.2.png "Höjd inlärninghastighet till 0.50")
+Vid testning av att öka inlärningshastighet ännu mer (från 0.01 höjt till till 1 och 2) så ser vi att accuracyn utöver tid är väldigt ostabil och i fallet för inlärningshastighet två (andra bilden) så ser vi att accuracyn ligger runt 0.1.
+![a.2](fig/a.2.png "Höjd inlärninghastighet till 1")
+![a.3](fig/a.1.png "Höjd inlärninghastighet till 2")
 
 ## b)
 Enligt våra experiment så ser vi att vid minskande av batch_size (från 256 till 128 och 64) leder till högre prestanda och längre träningstider.
@@ -16,7 +16,7 @@ Enligt våra experiment så ser vi att vid minskande av batch_size (från 256 ti
 
 ## c)
 Enligt våra experiment så ser vi att convolutional_model tar betydligt längre tid att träna jämfört med non_convolutional_model.
-Detta pågrund av att: convolutional modellen bygger upp flera 2D egenskapskartor.
+Detta pågrund av att: convolutional modellen bygger upp flera 2D egenskapskartor (matriser) istället för att titta varje pixel för sig. Den tittar alltså t.ex. 4x4 rutor istället.
 ![c.1](fig/c.1.png "Convolutional vs Non-convolutional")
 
 ## d)
@@ -57,9 +57,9 @@ Strides:
 - 5,5 = 0.9191
 - 4,4 = 0.9447
 - 3,3 = 0.9475
-- 1,1 = 9716
+- 1,1 = 0.9716
 
-Utefter det här anser vi att bästa värdet är (4,4) då högre stride mindre träningstider.
+Utefter det här anser vi att bästa värdet är (4,4) då högre stride ger mindre träningstider. Det negativa är att högre stride ger lägre accuraacy, efter 4,4 blir accuracyn för låg för våran smak.
 
 ## g)
 Här har vi testat flera lager på non-convolutional-model:
@@ -91,10 +91,10 @@ Vi anser att tiden blir för hög, men bra precision så vi ökade batch_size
 
 Resultat: Tid: 1m 27s Precision: 0.9754
 
-Vi anser fortfarande att tiden blev hög, och egentligen bara precisionen som försämrades. Höjer då tillbaka batch size och går till 1 lager.
+Vi anser fortfarande att tiden blev hög, och egentligen bara precisionen som försämrades. Sänker då tillbaka batch size och går till 1 lager.
 ### Test 3
 - Inlärningshastighet 0.01
-- Batch_size 128
+- Batch_size 64
 - Kernel size (12,12)
 - Stride (4,4)
 - 1 lager (32)
@@ -104,7 +104,7 @@ Resultat: Tid: 1m 24s Precision: 0.9655
 Ungefär samma resultat, bara mindre precision igen. Tillbaka till tre lager och ökar stride till (5,5).
 ### Test 5
 - Inlärningshastighet 0.01
-- Batch_size 128
+- Batch_size 64
 - Kernel size (12,12)
 - Stride (5,5)
 - 3 lager (32,64,128)
@@ -114,7 +114,7 @@ Resultat: Tid: 1m 19s Precision: 0.9749
 ## Slutsats
 Vår slutsats är följande konfiguration på convolutional_model
 - Inlärningshastighet 0.01
-- Batch_size 128
+- Batch_size 64
 - Kernel size (12,12)
 - Stride (5,5)
 - 3 lager (32,64,128)
